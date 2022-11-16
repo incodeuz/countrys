@@ -15,6 +15,7 @@ const Container = styled.div`
   @media screen and (max-width: 1280px) {
     padding: 0 16px;
   }
+  margin-bottom: 45px;
 `;
 
 const Wrapper = styled.div`
