@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { WrapperCon } from "./style";
 import { InputBox, Wrapper } from "./style";
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CountryDetails from "../Country/index";
 
 const Home = () => {
@@ -21,10 +21,20 @@ const Home = () => {
   console.log([...api.map((val) => val.name)]);
   console.log("====================================");
   const searchCountrys = async (term) => {
-    if (term.length < 0 || term === "") return;
-    const res = await fetch(`https://restcountries.com/v2/name/${term}`);
-    const data = await res.json();
-    await setApi(data);
+    try {
+      // if (term.length < 0 || term === "") return;
+      if (
+        api.map((val) => val.name.toLowerCase().includes(term.toLowerCase()))
+      ) {
+        const res = await fetch(`https://restcountries.com/v2/name/${term}`);
+        const data = await res.json();
+        await setApi(data);
+      } else {
+        navigate("/notfound");
+      }
+    } catch (err) {
+      navigate("/notfound");
+    }
     // if ([...api.map((val) => val.name)].includes(term) || term === "") {
     //   navigate("/notfound");
     // }
