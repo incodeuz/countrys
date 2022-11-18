@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { WrapperCon } from "./style";
 import { InputBox, Wrapper } from "./style";
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
 import CountryDetails from "../Country/index";
+import { ThemeContext } from "../../context/darkMode";
 
 const Home = () => {
+  const { dark } = useContext(ThemeContext);
   const [api, setApi] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -41,9 +43,14 @@ const Home = () => {
   };
 
   return (
-    <>
-      <Wrapper id="dark">
-        <InputBox id="dark">
+    <div
+      style={{
+        paddingTop: "50px",
+        background: dark ? "var(--darkbgcon)" : "var(--lightbgcon)",
+      }}
+    >
+      <Wrapper dark={dark}>
+        <InputBox dark={dark}>
           <SearchIcon id="dark" />
           <input
             onChange={(term) => searchCountrys(term.target.value)}
@@ -74,12 +81,12 @@ const Home = () => {
                   image_url={country.flag}
                   population={country.population}
                   region={country.region}
-                  capital={country.capital}
+                  capital={country.capital} 
                 />
               </Link>
             ))}
       </WrapperCon>
-    </>
+    </div>
   );
 };
 

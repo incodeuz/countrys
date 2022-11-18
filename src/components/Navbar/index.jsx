@@ -1,26 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, DarkMode, Wrapper } from "./style";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import { Outlet } from "react-router-dom";
+import { ThemeContext } from "../../context/darkMode";
 
 const Navbar = () => {
-  const darkModeFunc = () => {
-    const darkMode = document.querySelectorAll("#dark");
-    console.log(darkMode);
-    for (let key in darkMode) {
-      console.log(darkMode[key].classList.toggle("dark"));
-    }
-    // darkMode.map((value) => {
-    //   // value.classList.toggle("dark");
-    //   console.log(value);
-    // });
-  };
+  const { dark, setDark } = useContext(ThemeContext);
   return (
     <>
-      <Container>
-        <Wrapper>
-          <Logo className="logo" />
-          <Button onClick={() => darkModeFunc()} id="btn">
+      <Container dark={dark} id="con">
+        <Wrapper dark={dark}>
+          <Logo dark={dark} className="logo" />
+          <Button dark={dark} onClick={() => setDark(!dark)} id="btn">
             <DarkMode /> Dark mode
           </Button>
         </Wrapper>

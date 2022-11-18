@@ -31,11 +31,15 @@ const Wrapper = styled.div`
     outline: none;
     border: none;
     margin-left: 30px;
+    color: ${({ dark }) => (dark ? "var(--lightbg)" : "var(--darkbg)")};
     font-size: 18px;
+    background: ${({ dark }) => (dark ? "var(--darkbg)" : "var(--lightbg)")};
     width: 100%;
   }
   select {
-    background: #ffffff;
+    background: ${({ dark }) => (dark ? "var(--darkbg)" : "var(--lightbg)")};
+    color: ${({ dark }) => (dark ? "var(--lightbg)" : "var(--darkbg)")};
+
     box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
     border-radius: 5px;
     padding: 18px 24px;
@@ -58,7 +62,8 @@ const InputBox = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: ${({ dark }) => (dark ? "var(--darkbg)" : "var(--lightbg)")};
+  color: ${({ dark }) => (dark ? "var(--lightbg)" : "var(--darkbg)")};
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   border-radius: 5px;
   padding: 18px 34px;

@@ -5,8 +5,8 @@ const Cart = styled.div`
   height: 350px;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.02);
+  background: ${({ dark }) => (dark ? "var(--darkbg)" : "var(--lightbg)")};
+  color: ${({ dark }) => (dark ? "var(--lightbg)" : "var(--darkbg)")};
   border-radius: 5px;
   margin-bottom: 67px;
   transition: all 0.1s linear;
@@ -16,7 +16,8 @@ const Cart = styled.div`
     height: 330px;
   }
   :hover {
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 7px 5px
+      ${({ dark }) => (dark ? "var(--lightbgcon)" : "var(--darkbg)")};
     .image {
       transition: all 0.1s linear;
       transform: scale(1.1);
@@ -26,10 +27,12 @@ const Cart = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
+  max-height: 200px;
 `;
 const Boxes = styled.div`
   padding: 24px;
   flex: 1;
+  color: ${({ dark }) => (dark ? "var(--lightbg)" : "var(--darkbg)")};
 `;
 
 Boxes.Title = styled.div`
@@ -38,7 +41,7 @@ Boxes.Title = styled.div`
   font-weight: 800;
   font-size: 18px;
   line-height: 26px;
-  color: #111517;
+
   margin-bottom: 15px;
   @media screen and (max-width: 500px) {
   }

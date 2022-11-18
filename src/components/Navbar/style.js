@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { ReactComponent as DarkLight } from "../../assets/icons/light.svg";
 
 const Container = styled.div`
-  background-color: var(--lightbg);
+  background-color: ${({ dark }) =>
+    dark ? "var(--darkbg)" : "var(--lightbg)"};
+  color: ${({ dark }) => (dark ? "var(--lightbg)" : "var(--darkbg)")};
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   width: 100%;
   .logo {
@@ -15,7 +17,6 @@ const Container = styled.div`
   @media screen and (max-width: 1280px) {
     padding: 0 16px;
   }
-  margin-bottom: 45px;
 `;
 
 const Wrapper = styled.div`
@@ -32,8 +33,12 @@ const Button = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 10px 15px;
+  border-radius: 5px;
   :hover {
     cursor: pointer;
+    box-shadow: 0 0 7px 5px
+      ${({ dark }) => (dark ? "var(--lightbgcon)" : "rgba(0, 0, 0, 0.1)")};
   }
 `;
 

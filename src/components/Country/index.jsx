@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../context/darkMode";
 import { Boxes, Cart, Image } from "./style";
 
 const CountryDetails = ({ title, image_url, population, region, capital }) => {
+  const { dark } = useContext(ThemeContext);
   return (
-    <Cart>
+    <Cart dark={dark}>
       <Image className="image" src={image_url} alt={title} />
-      <Boxes>
+      <Boxes dark={dark}>
         <Boxes.Title>{title}</Boxes.Title>
         <p>
           <strong>Population:</strong> {population}

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  padding-top: 50px;
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
@@ -63,7 +64,6 @@ const Wrapper = styled.div`
     line-height: 44px;
     /* identical to box height */
     margin-bottom: 23px;
-    color: #111517;
   }
   .box__subtitles {
     font-family: "Nunito Sans";
@@ -71,8 +71,7 @@ const Wrapper = styled.div`
     font-weight: 600;
     font-size: 18px;
     line-height: 32px;
-    /* or 200% */
-    color: #111517;
+
     p {
       margin-bottom: 15px;
     }
