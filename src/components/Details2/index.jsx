@@ -23,7 +23,7 @@ const Details2 = () => {
     <div
       style={{
         background: dark ? "var(--darkbgcon)" : "var(--lightbgcon)",
-        height: "calc(100vh - 80px)",
+        height: "calc(100% - 80px)",
       }}
     >
       {isLoading
