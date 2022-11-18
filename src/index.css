@@ -10,8 +10,15 @@
   --lightbgcon: #f2f2f2;
   --darkbg: #2b3844;
   --darkbgcon: #212c36;
-} 
-
+}
+.containerWrapper {
+  height: calc(100vh - 80px);
+}
+@media screen and (max-width: 500px) {
+  .containerWrapper {
+    height: 100%;
+  }
+}
 h1,
 h2,
 h3,

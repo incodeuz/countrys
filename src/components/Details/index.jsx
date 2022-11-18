@@ -10,9 +10,9 @@ const Details = () => {
 
   return (
     <div
+      className="containerWrapper"
       style={{
         background: dark ? "var(--darkbgcon)" : "var(--lightbgcon)",
-        height: "calc(100% - 80px)",
       }}
     >
       <Wrapper>
