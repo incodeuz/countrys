@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
   font-family: "Nunito sans", sans-serif;
 }
 :root {
@@ -10,6 +11,11 @@
   --lightbgcon: #f2f2f2;
   --darkbg: #2b3844;
   --darkbgcon: #212c36;
+}
+
+.dark {
+  background-color: #2b3844;
+  color: white;
 }
 
 h1,

@@ -32,6 +32,9 @@ const Button = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const DarkMode = styled(DarkLight)``;

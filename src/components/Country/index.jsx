@@ -4,7 +4,7 @@ import { Boxes, Cart, Image } from "./style";
 const CountryDetails = ({ title, image_url, population, region, capital }) => {
   return (
     <Cart>
-      <Image src={image_url} alt={title} />
+      <Image className="image" src={image_url} alt={title} />
       <Boxes>
         <Boxes.Title>{title}</Boxes.Title>
         <p>

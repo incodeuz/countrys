@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Box, Wrapper } from "./style";
-import { ReactComponent as Back } from "../../assets/icons/BACK.svg";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Details = () => {
   const [api, setApi] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch("https://restcountries.com/v2/all").then((res) =>
       res.json().then((data) => {
         setApi(data);
-        setIsLoading(false);
       })
     );
   }, []);
   const navigate = useNavigate();
   const { state } = useLocation();
- 
+  console.log(state.borders);
   return (
     <Wrapper>
       <p onClick={() => navigate("/")} className="back">
@@ -61,18 +58,9 @@ const Details = () => {
 
             {state.borders.map((val) => {
               return (
-                <p
-                  onClick={
-                    api.map((value) => {
-                      val === value;
-                    })
-                      ? console.log("togri")
-                      : console.warn("hallo")
-                  }
-                  className="titles"
-                >
-                  {val}
-                </p>
+                <Link to={`/details2/:${val}`}>
+                  <p className="titles">{val}</p>
+                </Link>
               );
             })}
           </div>
