@@ -11,6 +11,10 @@ const Cart = styled.div`
   margin-bottom: 67px;
   transition: all 0.1s linear;
   overflow: hidden;
+  @media screen and (max-width: 500px) {
+    width: 230px;
+    height: 330px;
+  }
   :hover {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
     .image {
@@ -36,6 +40,8 @@ Boxes.Title = styled.div`
   line-height: 26px;
   color: #111517;
   margin-bottom: 15px;
+  @media screen and (max-width: 500px) {
+  }
 `;
 
 export { Cart, Image, Boxes };

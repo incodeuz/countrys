@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  height: 80px;
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
@@ -12,15 +11,29 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 1300px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
   .img {
     flex: 1;
     width: 100px;
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+    }
   }
   .back {
     font-style: normal;
@@ -38,6 +51,9 @@ const Wrapper = styled.div`
     :hover {
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
       cursor: pointer;
+    }
+    @media screen and (max-width: 500px) {
+      margin-left: 16px;
     }
   }
   .box__title {
@@ -60,26 +76,36 @@ const Wrapper = styled.div`
     p {
       margin-bottom: 15px;
     }
+    @media screen and (max-width: 1300px) {
+      font-size: 15px;
+    }
   }
 
   .borders {
     margin-top: 30px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     .borde {
       font-size: 18px;
     }
+    @media screen and (max-width: 1300px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
   .titles {
-    margin-left: 20px;
-    padding: 10px 20px;
+    padding: 8px 13px;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
-
+    margin: 5px;
     :hover {
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
       cursor: pointer;
     }
     border-radius: 5px;
+    @media screen and (max-width: 1300px) {
+      font-size: 13px;
+    }
   }
 `;
 
@@ -88,6 +114,9 @@ const Box = styled.div`
   flex-direction: column;
   flex: 1;
   margin-left: 80px;
+  @media screen and (max-width: 500px) {
+    margin: 0 auto;
+  }
 `;
 
 export { Wrapper, Box };

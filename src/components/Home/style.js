@@ -7,9 +7,12 @@ const WrapperCon = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @media screen and (max-width: 544px) {
+  @media screen and (max-width: 590px) {
     display: flex;
     justify-content: center;
+  }
+  @media screen and (max-width: 1300px) {
+    padding: 0 16px;
   }
   .link {
     text-decoration: none;
