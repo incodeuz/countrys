@@ -16,12 +16,7 @@ const Cart = styled.div`
     height: 330px;
   }
   :hover {
-    box-shadow: 0px 0px 7px 5px
-      ${({ dark }) => (dark ? "var(--lightbgcon)" : "var(--darkbg)")};
-    .image {
-      transition: all 0.1s linear;
-      transform: scale(1.1);
-    }
+    transform: scale(1.05);
   }
 `;
 const Image = styled.img`

@@ -42,8 +42,6 @@ const Wrapper = styled.div`
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
-    /* identical to box height, or 125% */
-
     width: fit-content;
     color: #111517;
     padding: 10px 15px;
@@ -51,7 +49,6 @@ const Wrapper = styled.div`
     border-radius: 5px;
     transition: all 0.1s linear;
     :hover {
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
       cursor: pointer;
     }
     @media screen and (max-width: 500px) {
@@ -63,7 +60,6 @@ const Wrapper = styled.div`
     font-weight: 800;
     font-size: 32px;
     line-height: 44px;
-    /* identical to box height */
     margin-bottom: 23px;
   }
   .box__subtitles {
@@ -96,10 +92,8 @@ const Wrapper = styled.div`
   }
   .titles {
     padding: 8px 13px;
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
     margin: 5px;
     :hover {
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
       cursor: pointer;
     }
     border-radius: 5px;
